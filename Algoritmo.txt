@@ -1,0 +1,15 @@
+Menu de Cadastro
+
+1. Através de um menu interativo, deverá mostrar ao usuário as ações disponíveis para executar através do programa.
+
+2. Após escolha do usuário, o sistema deve ser capaz de cadastrar o nome, telefone e endereço da pessoa desejada pelo usuário.
+
+3. O programa deverá verificar se o código informado já não está sendo utilizado.
+
+4. O sistema deve ser capaz de buscar e mostrar na tela o registro solicitado pelo usuário.
+
+5. Deverá também excluir um registro, se assim desejado, e liberar o espaço de memória anteriormente utilizado para armazenar um novo registro.
+
+6. Apresentar os créditos do programa, se assim for necessário.
+
+7. O usuário deverá conseguir sair do programa quando desejar.
