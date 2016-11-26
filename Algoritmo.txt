@@ -1,15 +1,93 @@
-Menu de Cadastro
+Algorítmo utilizado para realização do trabalho de lista encadeada.
 
-1. Através de um menu interativo, deverá mostrar ao usuário as ações disponíveis para executar através do programa.
+-Logo baixo a estrutura do que sera realizado: 
+		cod
+		nome
+		telefone
+		endereço
+		ponteiro (null)   <------malloc   (antes do malloc ponteiro é null, depois do malloc ponteiro deixa de ser null)
+		|
+		|
+  		|
+ 		---->   nova estrutua com:
+        		cod +1
+		        nome
+			telefone
+			endereço
+			ponteiro (null)   <------malloc   (antes do malloc ponteiro é null, depois do malloc ponteiro deixa de ser null)
+        		| 
+  			|  
+  			| 
+  			---->   nova estrutua com:
+				cod +1
+       				nome
+				telefone
+				endereço
+				ponteiro (null)   <------malloc   (antes do malloc ponteiro é null, depois do malloc ponteiro deixa de ser null)
+                		|
+				|
+				|
+				----> (...)
 
-2. Após escolha do usuário, o sistema deve ser capaz de cadastrar o nome, telefone e endereço da pessoa desejada pelo usuário.
 
-3. O programa deverá verificar se o código informado já não está sendo utilizado.
+-Menu onde o usuário possa escolher o que realizar:
+	.1_Inserir registro;
+	.2_Buscar cadastro;
+	.3_Excluir um cadastro;
+	.4_Créditos;
+	.5_Sair do sistema.
 
-4. O sistema deve ser capaz de buscar e mostrar na tela o registro solicitado pelo usuário.
+-Solicitar que o usuário escolha uma destas opções.
+	*Caso o usuário escolha "1_Inserir cadastro", o sistema deve validar da seguinte forma:
+		.-Solicitar que o usuário digite o número de registro:
+			.Verifica se já existem cadastros:
+				-Se existir cadastros anteriores:
+					.Faz uma varredura em busca do código:
+						-Se cod for igual ao cod armazenado que aponta para os cadastros criados, entra no laço:
+							.O sistema o sistema imprime a mensagem: Codigo ja existente, por favor tente outro!.
+				-Se não existir nenhum cadastro:			
+					.Variavel flag recebe o valor "1", caso condição seja verdadeira;
+						-Solicitar que o usuário digite os dados cadastrais:
+							.Nome;
+							.Endereço;
+							.Telefone;					
+					-Criar uma nova lista a partir do ponteiro, conforme ilustrado no caso "Fazer a Estrutura";
+					-Após incluir, o sistema volta ao menu principal.
 
-5. Deverá também excluir um registro, se assim desejado, e liberar o espaço de memória anteriormente utilizado para armazenar um novo registro.
 
-6. Apresentar os créditos do programa, se assim for necessário.
+	*Caso o usuário  escolha "2_Buscas registro", o sistema deve validar da seguinte forma:
+		.Solicitar que o usuário informe o cod do cadastro que deseja consultar;
+		.Verifica o cod informado pelo usuário:
+			-Se o cod informado não existir, 
+				.Retornar mensagem dizendo: Lista vazia.
+			-Se o cod informado for uma letra ou caractere especial, 
+				.Retornar mensagem dizendo: Codigo nao encontrado!.
+			-Se o cod informado for válido e existir, 
+				.retornar as informações referentes a este cod.
+			-Ao localizar o cadastro que procura. Imprimindo este cadastro na tela;
+		.Após, o sistema volta ao menu principal.
++MELHORIA: Caso sobre tempo ou consigamos fazer, validar a busca pelo nome também e não apenas pelo COD.
 
-7. O usuário deverá conseguir sair do programa quando desejar.
+
+	*Caso o usuário escolha "3_Exlcuir resgistro", o sistema deve validar da seguinte forma:
+		.Solicitar que o usuário informe o cod do cadastro que deseja excluir;
+		.Verifica o cod informado pelo usuário:
+			-Se o cod informado não existir, 
+				.Retornar mensagem dizendo: Lista vazia!!!.
+			-Se o COD informado for uma letra ou caractere especial, 
+				.Retornar mensagem dizendo: Dado n encontrado.
+			-Se o COD informado for válido e existir,
+				.Utilizar o COD informado pelo usuário para localizar o cadastro que procura;
+					.Verificar se o ponteiro que está nesta lista está com com valor NULL ou não.
+						.Caso esteja NULL, 
+							-Fazer a exclusão sem problema algum;
+						.Caso esteja preenchido, 
+							-O ponteiro da lista anterior deve apontar para o ponteiro da lista que está para ser excluída;
+				.Utilizar o comando FREE para liberar a memória do ponteiro que aponta para a estrutura que deve ser excluída.
+	
+	*Caso o usuário escolha "4_Créditos", o sistema deve validar da seguinte forma:
+		.Direcionar o usuário a uma tela onde seja exibido os dados dos colaboradores deste trabalho.
+
+
+	*Caso o usuário escolha "5_Sair do sistema", o sistema deve validar da seguinte forma:
+		.O programa deve ser finalizado.
